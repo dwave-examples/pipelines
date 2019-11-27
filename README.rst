@@ -24,6 +24,17 @@ Code Overview
 
 The program ``pipelines.py`` creates a graph using the Python package ``networkx``, and then uses the Ocean software tools to run the ``minimum_vertex_cover`` function from within the ``dwave_networkx`` package.
 
+Inside the Code: The Lagrange Parameter
+------ --- ----  --- -------- ---------
+Gamma, our Lagrange parameter, weights the constraints in the problem versus
+the energy term (objective). If the Lagrange parameter is too small, relative
+to the strength of the energy term, the constraints may be violated.
+
+In this code, the default of the Lagrange parameter is 2. Repeated runs showed
+sets which were too small - visual inspection shows that we should see
+minimum vertex covers of size 4. The Lagrange parameter value of 5 was set
+large enough to balance the rest of the terms in the QUBO.
+
 License
 -------
 Released under the Apache License 2.0. See `LICENSE <../LICENSE>`_ file.
