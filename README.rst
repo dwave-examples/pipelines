@@ -30,10 +30,19 @@ Gamma, our Lagrange parameter, weights the constraints in the problem versus
 the energy term (objective). If the Lagrange parameter is too small, relative
 to the strength of the energy term, the constraints may be violated.
 
-In this code, the default of the Lagrange parameter is 2. Repeated runs showed
-sets which were too small - visual inspection shows that we should see
-minimum vertex covers of size 4. The Lagrange parameter value of 5 was set
-large enough to balance the rest of the terms in the QUBO.
+A valid vertex cover is a subset of nodes in the graph such that every edge
+in the graph has at least one end point in the subset. Visual inspection shows
+that we will need either 1 or 2 in the solution; we will also need 6 or 7;
+and we will also need 4 or 5. We therefore know that a minimum vertex cover
+will have at least 3 nodes; it turns out that there must be four.
+
+With a Lagrange parameter that is too weak, the solutions are sets which are
+too small. In this code, the default of the Lagrange parameter is 2. 
+Repeated runs, using the default, showed sets which had size 2 or 3.
+
+Hence, the Lagrange parameter value of 5 was set large enough to balance the 
+rest of the terms in the QUBO, and to cause the minimum vertex cover conditions
+to all be satisfied for this problem.
 
 License
 -------
