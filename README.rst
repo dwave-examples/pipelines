@@ -1,5 +1,5 @@
 Pipelines Demo
-=============
+==============
 
 Pipeline networks can be viewed as a graph built up of edges (pipeline segments) and nodes (junctions of pipeline segments).  Suppose that within this network of pipelines, we want to determine a set of junctions from which we can monitor every pipeline segment.  This problem can be modeled as a vertex cover problem in which we want to find a subset of nodes in a graph such that every edge has at least one end point in our subset.
 
@@ -15,8 +15,11 @@ Solution: One possible solution is indicated by the red nodes below.
 
 Usage
 -----
+
 To run the demo:
-::
+
+.. code-block:: bash
+
   python pipelines.py
 
 Code Overview
@@ -26,4 +29,5 @@ The program ``pipelines.py`` creates a graph using the Python package ``networkx
 
 License
 -------
+
 Released under the Apache License 2.0. See `LICENSE <../LICENSE>`_ file.
