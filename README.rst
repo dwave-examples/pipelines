@@ -24,10 +24,8 @@ Code Overview
 
 The program ``pipelines.py`` creates a graph using the Python package ``networkx``, and then uses the Ocean software tools to run the ``minimum_vertex_cover`` function from within the ``dwave_networkx`` package.
 
-Inside the Code: The Lagrange Parameter
------- --- ----  --- -------- ---------
-Gamma, our Lagrange parameter, weights the constraints in the problem versus
-the energy term (objective). If the Lagrange parameter is too small, relative
+Gamma, our Lagrange parameter (please see <https://en.wikipedia.org/wiki/Lagrange_multiplier> for a discussion of Lagrange multiplier, an analogous concept), weights the constraints in the problem versus
+the energy term (objective). If the Lagrange parameter is too small relative
 to the strength of the energy term, the constraints may be violated.
 
 A valid vertex cover is a subset of nodes in the graph such that every edge
@@ -37,12 +35,11 @@ and we will also need 4 or 5. We therefore know that a minimum vertex cover
 will have at least 3 nodes; it turns out that there must be four.
 
 With a Lagrange parameter that is too weak, the solutions are sets which are
-too small. In this code, the default of the Lagrange parameter is 2. 
-Repeated runs, using the default, showed sets which had size 2 or 3.
+too small. In the ``minimum_vertex_cover`` function from within the ``dwave_networkx`` package, the default of the Lagrange parameter is 2. 
+Repeated runs, using the default, produced sets which had size 2 or 3.
 
-Hence, the Lagrange parameter value of 5 was set large enough to balance the 
-rest of the terms in the QUBO, and to cause the minimum vertex cover conditions
-to all be satisfied for this problem.
+Hence, the Lagrange parameter value of 5 was (1) set large enough to balance 
+the energy term and constraints, and (2) to cause the minimum vertex cover conditions to all be satisfied for this problem.
 
 License
 -------
