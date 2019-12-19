@@ -48,4 +48,4 @@ the energy term and constraints, and to (2) cause the minimum vertex cover condi
 License
 -------
 
-Released under the Apache License 2.0. See `LICENSE <../LICENSE>`_ file.
+Released under the Apache License 2.0. See `LICENSE <LICENSE>`_ file.
