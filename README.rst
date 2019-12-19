@@ -1,5 +1,6 @@
-Pipelines Demo
-==============
+=========
+Pipelines
+=========
 
 Pipeline networks can be viewed as a graph built up of edges (pipeline segments) and nodes (junctions of pipeline segments).  Suppose that within this network of pipelines, we want to determine a set of junctions from which we can monitor every pipeline segment.  This problem can be modeled as a vertex cover problem in which we want to find a subset of nodes in a graph such that every edge has at least one end point in our subset.
 
