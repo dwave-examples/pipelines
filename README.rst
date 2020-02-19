@@ -1,3 +1,7 @@
+.. image:: https://circleci.com/gh/dwave-examples/pipelines.svg?style=svg
+    :target: https://circleci.com/gh/dwave-examples/pipelines
+    :alt: Linux/Mac/Windows build status
+
 =========
 Pipelines
 =========
