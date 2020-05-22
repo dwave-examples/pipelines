@@ -28,3 +28,16 @@ class TestDemo(unittest.TestCase):
         demo_file = os.path.join(project_dir, 'pipelines.py')
         subprocess.check_output([sys.executable, demo_file])
 
+    def test_pipelines(self):
+        demo_file = os.path.join(project_dir, 'pipelines.py')
+        output = subprocess.check_output([sys.executable, demo_file])
+        output = str(output).upper()
+        if os.getenv('DEBUG_OUTPUT'):
+            print("Example output \n" + output)
+            
+        with self.subTest(msg="Verify if output contains 'Minimum vertex cover found' \n"):
+            self.assertIn("Minimum vertex cover found".upper(), output)
+        with self.subTest(msg="Verify if error string contains in output \n"):
+            self.assertNotIn("ERROR", output)
+        with self.subTest(msg="Verify if warning string contains in output \n"):
+            self.assertNotIn("WARNING", output)
